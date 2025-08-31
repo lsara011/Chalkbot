@@ -1,0 +1,60 @@
+/* ---- compact sizing ---- */
+:root { --loader-size: 3px; }           /* tweak 5–7px to taste */
+
+.loadingRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;                              /* tighter gap */
+  color: #9ca3af;
+}
+
+/* shimmer stays the same */
+.thinking{
+  background: linear-gradient(90deg,#9ca3af 0%,#cbd5e1 40%,#9ca3af 80%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 1.1s linear infinite;
+  letter-spacing: .2px;
+  font-size: 13.5px;                     /* slightly smaller text */
+}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+/* keep spinner fully inside the bubble */
+.loaderBox{
+  /* spinner’s dots reach 2.6em from center → total 5.2em diameter */
+  font-size: var(--loader-size);
+  width: 5.2em;
+  height: 5.2em;
+  display: grid;
+  place-items: center;
+  overflow: visible;                      /* just in case */
+}
+
+/* your spinner, scaled via the inherited font-size */
+.loader{
+  font-size: 1em;                        /* inherits from .loaderBox */
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  animation: mulShdSpin .9s infinite ease; /* a touch faster */
+  transform: translateZ(0);
+}
+@keyframes mulShdSpin{
+  0%,100%{box-shadow:0 -2.6em 0 0 #fff, 1.8em -1.8em 0 0 rgba(255,255,255,.2), 2.5em 0 0 0 rgba(255,255,255,.2), 1.75em 1.75em 0 0 rgba(255,255,255,.2), 0 2.5em 0 0 rgba(255,255,255,.2), -1.8em 1.8em 0 0 rgba(255,255,255,.2), -2.6em 0 0 0 rgba(255,255,255,.5), -1.8em -1.8em 0 0 rgba(255,255,255,.7)}
+  12.5% {box-shadow:0 -2.6em 0 0 rgba(255,255,255,.7), 1.8em -1.8em 0 0 #fff, 2.5em 0 0 0 rgba(255,255,255,.2), 1.75em 1.75em 0 0 rgba(255,255,255,.2), 0 2.5em 0 0 rgba(255,255,255,.2), -1.8em 1.8em 0 0 rgba(255,255,255,.2), -2.6em 0 0 0 rgba(255,255,255,.2), -1.8em -1.8em 0 0 rgba(255,255,255,.5)}
+  25%   {box-shadow:0 -2.6em 0 0 rgba(255,255,255,.5), 1.8em -1.8em 0 0 rgba(255,255,255,.7), 2.5em 0 0 0 #fff, 1.75em 1.75em 0 0 rgba(255,255,255,.2), 0 2.5em 0 0 rgba(255,255,255,.2), -1.8em 1.8em 0 0 rgba(255,255,255,.2), -2.6em 0 0 0 rgba(255,255,255,.2), -1.8em -1.8em 0 0 rgba(255,255,255,.2)}
+  37.5% {box-shadow:0 -2.6em 0 0 rgba(255,255,255,.2), 1.8em -1.8em 0 0 rgba(255,255,255,.5), 2.5em 0 0 0 rgba(255,255,255,.7), 1.75em 1.75em 0 0 #fff, 0 2.5em 0 0 rgba(255,255,255,.2), -1.8em 1.8em 0 0 rgba(255,255,255,.2), -2.6em 0 0 0 rgba(255,255,255,.2), -1.8em -1.8em 0 0 rgba(255,255,255,.2)}
+  50%   {box-shadow:0 -2.6em 0 0 rgba(255,255,255,.2), 1.8em -1.8em 0 0 rgba(255,255,255,.2), 2.5em 0 0 0 rgba(255,255,255,.5), 1.75em 1.75em 0 0 rgba(255,255,255,.7), 0 2.5em 0 0 #fff, -1.8em 1.8em 0 0 rgba(255,255,255,.2), -2.6em 0 0 0 rgba(255,255,255,.2), -1.8em -1.8em 0 0 rgba(255,255,255,.2)}
+  62.5% {box-shadow:0 -2.6em 0 0 rgba(255,255,255,.2), 1.8em -1.8em 0 0 rgba(255,255,255,.2), 2.5em 0 0 0 rgba(255,255,255,.2), 1.75em 1.75em 0 0 rgba(255,255,255,.5), 0 2.5em 0 0 rgba(255,255,255,.7), -1.8em 1.8em 0 0 #fff, -2.6em 0 0 0 rgba(255,255,255,.2), -1.8em -1.8em 0 0 rgba(255,255,255,.2)}
+  75%   {box-shadow:0 -2.6em 0 0 rgba(255,255,255,.2), 1.8em -1.8em 0 0 rgba(255,255,255,.2), 2.5em 0 0 0 rgba(255,255,255,.2), 1.75em 1.75em 0 0 rgba(255,255,255,.2), 0 2.5em 0 0 rgba(255,255,255,.5), -1.8em 1.8em 0 0 rgba(255,255,255,.7), -2.6em 0 0 0 #fff, -1.8em -1.8em 0 0 rgba(255,255,255,.2)}
+  87.5% {box-shadow:0 -2.6em 0 0 rgba(255,255,255,.2), 1.8em -1.8em 0 0 rgba(255,255,255,.5), 2.5em 0 0 0 rgba(255,255,255,.7), 1.75em 1.75em 0 0 #fff, 0 2.5em 0 0 rgba(255,255,255,.2), -1.8em 1.8em 0 0 rgba(255,255,255,.5), -2.6em 0 0 0 rgba(255,255,255,.7), -1.8em -1.8em 0 0 #fff}
+}
+
+/* motion preference */
+@media (prefers-reduced-motion: reduce){
+  .thinking,.loader{animation:none}
+}

@@ -1,0 +1,113 @@
+/* ===========================
+   Markdown styles for chat UI
+   =========================== */
+
+.md {
+  line-height: 1.5;
+  font-size: 14.5px;
+  color: #e5e7eb; /* match assistant bubble text color */
+}
+
+/* Remove extra “air” at the very top/bottom of the bubble */
+.md > :first-child { margin-top: 0 !important; }
+.md > :last-child  { margin-bottom: 0 !important; }
+
+/* Paragraphs */
+.md p { margin: 0.15rem 0; }
+
+/* Headings */
+.md h1, .md h2, .md h3, .md h4, .md h5, .md h6 {
+  margin: 0.2rem 0 0.35rem;
+  line-height: 1.3;
+  font-weight: 600;
+}
+.md h1 { font-size: 1.10rem; }
+.md h2 { font-size: 1.00rem; }
+.md h3 { font-size: 0.95rem; }
+.md h4 { font-size: 0.90rem; }
+.md h5, .md h6 { font-size: 0.88rem; font-weight: 600; }
+
+/* Lists — compact & tidy */
+.md ul,
+.md ol {
+  margin: 0.10rem 0;      /* kill big default margins */
+  padding-left: 0.9rem;   /* tighter indent */
+  list-style-position: outside;
+}
+.md p + ul,
+.md p + ol { margin-top: 0.05rem; }  /* shrink gap when list follows a paragraph */
+.md li { margin: 0.10rem 0; }
+.md li > p { margin: 0; }            /* prevent extra gaps inside bullets */
+.md ul ul,
+.md ol ol { margin: 0.08rem 0; }     /* nested lists slightly tighter */
+
+/* Blockquote */
+.md blockquote {
+  margin: 0.2rem 0;
+  padding-left: 0.6rem;
+  border-left: 3px solid #1f2a44;
+  color: #cbd5e1;
+}
+
+/* Links */
+.md a {
+  color: #93c5fd;
+  text-decoration: underline;
+  word-break: break-word;
+}
+
+/* Inline code */
+.md code {
+  background: #0f172a;
+  border: 1px solid #1f2a44;
+  border-radius: 6px;
+  padding: 0.05rem 0.3rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.9em;
+}
+
+/* Code block */
+.md pre {
+  margin: 0.2rem 0;
+  padding: 10px;
+  background: #0f172a;
+  border: 1px solid #1f2a44;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+.md pre code { border: none; padding: 0; }
+
+/* Horizontal rule */
+.md hr {
+  border: none;
+  border-top: 1px solid #1f2a44;
+  margin: 0.4rem 0;
+}
+
+/* Tables (GFM) */
+.md table {
+  border-collapse: collapse;
+  margin: 0.2rem 0;
+  width: auto;
+  max-width: 100%;
+}
+.md th, .md td {
+  border: 1px solid #1f2a44;
+  padding: 6px 8px;
+  vertical-align: top;
+}
+.md th {
+  background: #0f172a;
+  font-weight: 600;
+}
+
+/* Images */
+.md img {
+  max-width: 100%;
+  border-radius: 6px;
+  margin: 0.2rem 0;
+}
+
+/* -------- Optional: ultra-compact variant -------- */
+.md.compact ul, .md.compact ol { margin: 0.06rem 0; padding-left: 0.8rem; }
+.md.compact li { margin: 0.08rem 0; }
