@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "veoc3+oc612YM+bji6Cl1X7KZ4qP0XQz1I9IBTqboNE=",
+  "Source": "chalkbot-api",
+  "BasePath": "_content/chalkbot-api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

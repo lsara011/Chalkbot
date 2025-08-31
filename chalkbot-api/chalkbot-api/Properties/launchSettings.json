@@ -1,0 +1,23 @@
+{
+  "profiles": {
+    "http": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "http://localhost:5219"
+    },
+    "https": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "OPENAI_API_KEY": "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",
+        "OPENAI_ASSISTANT_ID": "asst_AujJPJaAuGSDlZxoDYpkZhrG"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "https://localhost:7208;http://localhost:5219"
+    }
+  },
+  "$schema": "https://json.schemastore.org/launchsettings.json"
+}

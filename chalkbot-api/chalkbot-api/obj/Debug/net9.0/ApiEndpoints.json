@@ -1,0 +1,18 @@
+[
+  {
+    "ContainingType": "ChatController",
+    "Method": "Chat",
+    "RelativePath": "api/Chat",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "ChatRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
